@@ -1,0 +1,13 @@
+example_id                                        | status  | run_time        |
+------------------------------------------------- | ------- | --------------- |
+./spec/helpers/sessions_helper_spec.rb[1:1]       | pending | 0.00001 seconds |
+./spec/helpers/users_helper_spec.rb[1:1]          | pending | 0.00003 seconds |
+./spec/models/article_spec.rb[1:1:1]              | passed  | 0.13719 seconds |
+./spec/models/categories_per_article_spec.rb[1:1] | pending | 0.00001 seconds |
+./spec/models/category_spec.rb[1:1]               | pending | 0.00001 seconds |
+./spec/models/user_spec.rb[1:1:1]                 | passed  | 0.0518 seconds  |
+./spec/models/vote_spec.rb[1:1]                   | pending | 0.00001 seconds |
+./spec/requests/sessions_request_spec.rb[1:1:1]   | passed  | 27.25 seconds   |
+./spec/requests/users_request_spec.rb[1:1:1]      | failed  | 0.02352 seconds |
+./spec/views/sessions/new.html.erb_spec.rb[1:1]   | pending | 0.00001 seconds |
+./spec/views/users/index.html.erb_spec.rb[1:1]    | pending | 0.00002 seconds |
