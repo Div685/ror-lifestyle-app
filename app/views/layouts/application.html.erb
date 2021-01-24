@@ -11,7 +11,7 @@
   </head>
 
   <body>
-  <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
+    <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
       <% if flash[:notice] %>
         
           <p class="notice"><%= notice %></p>  
@@ -26,24 +26,47 @@
     <% end %>
 
     <nav class="p-3 navbar navbar-expand-lg align-items-center d-flex justify-content-between">
-      <div class="logo text-white">
-        <%= link_to '!LiFestyLE', root_path, class: "logo-text text-dark "%> 
+      <div class="logo">
+        <%= link_to '!LiFestyLE', root_path, class: "logo-text"%>
+        <i class="dot-icon fas fa-circle"></i>
       </div>
+
       <div class="nav-right d-flex flex-row align-items-center">
-        <%= link_to 'Login', new_session_path, class:"" %>
-        <%= link_to 'Register', new_user_path, class: ""%>
-        <i class="fas fa-search"></i>
+        <%= link_to 'Login', new_session_path, class:"login" %>|
+        <%= link_to 'Register', new_user_path, class: "login"%>
+        <i class="search-icon fas fa-search"></i>
       </div>
     </nav>
 
 
-    <div class="container-fluid px-0 overflow-hidden">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10 col-lg-auto">
-        
+    <div class="main-section overflow-hidden">
+          <%= yield %>
+    </div>
+
+    <div class="footer p-3">
+
+      <div class="logo">
+        <%= link_to '!LiFestyLE', root_path, class: "footer-text"%>
+        <i class="dot-icon fas fa-circle"></i>
+      </div>
+
+      <div class="middle-footer">
+        <span>Privacy Policy Term & Condition &nbsp;</span>
+          Copyright 2014. All rights reserved.
+      </div>
+      
+      <div class="right-footer">
+        <span class="right-text">Connect with us: </span>
+        <div class="footer-icon">
+        <i class="footer-i fab fa-twitter"></i>
+        </div>
+        <div class="footer-icon">
+          <i class="footer-i fab fa-instagram"></i>
+        </div>
+        <div class="footer-icon">
+          <i class="footer-i fab fa-facebook-f"></i>
         </div>
       </div>
     </div>
-    <%= yield %>
   </body>
 </html>

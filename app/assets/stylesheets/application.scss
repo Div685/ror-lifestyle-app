@@ -20,3 +20,79 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/regular';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+.logo {
+  .logo-text {
+    color: #4e443e;
+    font-size: 24px;
+  }
+
+  .dot-icon {
+    color: #EC6010;
+    font-size: 14px;
+  }
+}
+
+.nav-right {
+  .login {
+    color: #95918C;
+    font-size: 16px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .search-icon {
+    color: #95918C;
+    margin: 0 10px 0 20px;
+  }
+}
+// Main section
+
+// Footer Section
+.footer {
+  background-color: #4e443e;
+  display: flex;
+  align-items: center;
+  flex-grow: 3;
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  .footer-text {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .middle-footer{
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    flex-grow: 1;
+    font-size: 14px;
+
+    span {
+      color: #EC6010;
+    }
+  }
+
+  .right-footer {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    display: flex;
+
+    .right-text {
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .footer-icon {
+      padding: 5px;
+      border-radius: 50%;
+      background: #EC6010;
+      margin-right: 5px;
+    }
+  }
+}
