@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RorLifestyleApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -24,14 +25,14 @@
       </div>
     <% end %>
 
-    <nav class="navbar navbar-expand-lg align-items-center bg-primary d-flex justify-content-between">
+    <nav class="p-3 navbar navbar-expand-lg align-items-center d-flex justify-content-between">
       <div class="logo text-white">
-           
+        <%= link_to '!LiFestyLE', root_path, class: "logo-text text-dark "%> 
       </div>
       <div class="nav-right d-flex flex-row align-items-center">
-        
-        
-        
+        <%= link_to 'Login', new_session_path, class:"" %>
+        <%= link_to 'Register', new_user_path, class: ""%>
+        <i class="fas fa-search"></i>
       </div>
     </nav>
 
