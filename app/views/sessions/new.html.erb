@@ -1,0 +1,17 @@
+<div class="box main my-5 mx-auto align-items-center d-flex flex-column border p-4 container w-25">
+    <h1 class="text-primary font-weight-bold">Log In</h1>
+    <div class="login-field">
+        <%= form_with url: sessions_path, local: true do |f| %>
+            <div class="form-group">
+                <%= f.label :name, class: "form_label" %>
+                <%= f.text_field :name, class: "form-control", placeholder: 'User Name'   %>
+            </div>
+            <div class="form-group">
+                <%= f.submit 'Log In', class: 'btn btn-primary' %>
+            </div>
+            <div>
+                <%= link_to 'Sign Up', sign_up_path, class: '' %>
+            </div>
+        <% end %>
+    </div>
+</div>

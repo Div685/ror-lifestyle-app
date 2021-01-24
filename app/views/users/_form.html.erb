@@ -1,0 +1,17 @@
+<%= simple_form_for(@user) do |f| %>
+  <%= f.error_notification %>
+    <div class="d-flex">
+      <div class="w-100 my-2 ">
+
+        <%= f.input :name,
+         required: true,
+         label: "User Name: ", 
+         input_html: { class: "form-control "},
+         wrapper: false, 
+         label_html: {class: "lable "},
+          placeholder: "User Name" %>
+      </div>
+
+  </div>
+  <%= f.button :submit, class: "btn btn-info mb-3" %>
+<% end %>
