@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  # get 'articles/index'
   # get 'sessions/new'
   # get 'users/new'
-  root 'users#index'
+  root 'articles#index'
   resources :users, only: [:index, :new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
