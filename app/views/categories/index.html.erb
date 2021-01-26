@@ -1,2 +1,11 @@
 <h1>Categories#index</h1>
 <p>Find me in app/views/categories/index.html.erb</p>
+
+<% @categories.each do |a| %>
+  <li>
+  <%= a.name %> |
+  <% a.articles.each do |aaa| %>
+    <%= aaa.title %>
+  <% end %>
+  </li>
+<% end %>

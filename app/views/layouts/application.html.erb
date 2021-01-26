@@ -16,12 +16,13 @@
     <nav class="p-3 navbar navbar-expand-lg align-items-center d-flex justify-content-between">
       
       <div class="logo">
-        <%= link_to '!LiFestyLE', root_path, class: "logo-text"%>
+        <%= link_to '!LiFestyLE', root_path, class: "logo-text text-decoration-none"%>
         <i class="dot-icon fas fa-circle"></i>
       </div>
 
       <div class="nav-right d-flex flex-row align-items-center">
         <% if current_user %>
+          <%= link_to 'Create Article', new_article_path, class: 'btn signup-button mr-1 text-white' %>
           <%= link_to current_user.name, root_path, class: "login" %>
           <%= link_to 'Sign Out', sign_out_path, class: "login" %>
         <% else %>

@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
-  has_many :categories_per_articles, foreign_key: :categoryId
-  has_many :articles, through: :categories_per_articles
+  has_many :categories_per_articles, class_name: 'CategoriesPerArticle'
+  has_many :articles, through: :categories_per_articles, source: :article
 
   validates_presence_of :name, :priority
   validates :name, length: { minimum: 3 }

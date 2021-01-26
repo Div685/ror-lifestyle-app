@@ -1,5 +1,11 @@
 <%= simple_form_for(@article) do |f| %>
   <%= f.error_notification %>
+    <% @article.errors.full_messages.each do |error| %>
+        <div class="alert alert-danger">
+          <%= error %>
+        </div>
+    <% end %>
+
   <div class="d-flex">
       <div class="w-100 my-2 ">
 
@@ -29,6 +35,11 @@
           input_html: {class: "form-control"},
           placeholder: "Add an Image URL" %>
 
+        <%# <%= f.input :category_ids, :collection => Category.all, label_method: :name, value_method: :id, label: "Category",
+         include_blank: false, input_html: {class: "form-control"} %> 
+
+          <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true,include_blank: false, :class => 'form-control js-example-basic-multiple'}) %><br>
+         <%# <%= f.select :category_ids, Category.all.map{|x| [x.name,x.id]}, {}, multiple: true,include_blank: false, class: 'form-control', id: 'categories' %>
       </div>
 
   </div>

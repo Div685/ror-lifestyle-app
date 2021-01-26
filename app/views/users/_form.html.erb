@@ -1,5 +1,5 @@
 <%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
+  <%= f.error_notification id: 'user_errors_message', class: 'form_errors text-danger' %>
     <div class="d-flex">
       <div class="w-100 my-2 ">
 
