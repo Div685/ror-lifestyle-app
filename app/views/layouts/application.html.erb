@@ -11,13 +11,31 @@
   </head>
 
   <body>
-    <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
-      <% if flash[:notice] %>
-        
-          <p class="notice"><%= notice %></p>  
-      <% end %>
-    </div>
+    
 
+    <nav class="p-3 navbar navbar-expand-lg align-items-center d-flex justify-content-between">
+      
+      <div class="logo">
+        <%= link_to '!LiFestyLE', root_path, class: "logo-text"%>
+        <i class="dot-icon fas fa-circle"></i>
+      </div>
+
+      <div class="nav-right d-flex flex-row align-items-center">
+        <% if current_user %>
+          <%= link_to current_user.name, root_path, class: "login" %>
+          <%= link_to 'Sign Out', sign_out_path, class: "login" %>
+        <% else %>
+          <%= link_to 'Login', new_session_path, class:"login" %>|
+          <%= link_to 'Register', new_user_path, class: "login"%>
+          <i class="search-icon fas fa-search"></i>
+        <% end %>
+      </div>
+    </nav>
+    <% if flash[:notice] %>
+      <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
+          <p class="notice"><%= notice %></p> 
+      </div>
+    <% end %>
     
     <% if flash[:alert] %>
       <div id="successMessage" class="p-2 d-flex align-items-center">
@@ -25,22 +43,8 @@
       </div>
     <% end %>
 
-    <nav class="p-3 navbar navbar-expand-lg align-items-center d-flex justify-content-between">
-      <div class="logo">
-        <%= link_to '!LiFestyLE', root_path, class: "logo-text"%>
-        <i class="dot-icon fas fa-circle"></i>
-      </div>
-
-      <div class="nav-right d-flex flex-row align-items-center">
-        <%= link_to 'Login', new_session_path, class:"login" %>|
-        <%= link_to 'Register', new_user_path, class: "login"%>
-        <i class="search-icon fas fa-search"></i>
-      </div>
-    </nav>
-
-
     <div class="main-section overflow-hidden">
-          <%= yield %>
+      <%= yield %>
     </div>
 
     <div class="footer p-3">
