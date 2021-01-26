@@ -15,7 +15,18 @@
          input_html: { class: "form-control "},
          wrapper: false, 
          label_html: {class: "lable "},
-          placeholder: "Title" %>
+          placeholder: "Title" %> <br>
+
+          <div class="d-flex justify-content-between">
+            <strong class="">Categories</strong>
+            <strong class="d-flex justify-content-end">select one or multiple categories from list</strong>
+          </div>
+
+          <div class="form-group">
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true, :include_blank => false, :class => 'form-control selectpicker' }) %>
+            <br>
+          </div>
+          
 
         <%= f.input :text,
           required: true,
@@ -34,12 +45,8 @@
           wrapper: false, 
           input_html: {class: "form-control"},
           placeholder: "Add an Image URL" %>
-
-        <%# <%= f.input :category_ids, :collection => Category.all, label_method: :name, value_method: :id, label: "Category",
-         include_blank: false, input_html: {class: "form-control"} %> 
-
-          <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true,include_blank: false, :class => 'form-control js-example-basic-multiple'}) %><br>
-         <%# <%= f.select :category_ids, Category.all.map{|x| [x.name,x.id]}, {}, multiple: true,include_blank: false, class: 'form-control', id: 'categories' %>
+          <br />
+          
       </div>
 
   </div>
