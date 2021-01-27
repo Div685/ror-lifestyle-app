@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   root 'articles#index'
   resources :users, only: [:index, :new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :articles
+  resources :articles do
+    resources :votes, only: [:create, :destroy]
+  end
   resources :categories
 
   get 'sign_in' => 'sessions#new', as: 'sign_in'
