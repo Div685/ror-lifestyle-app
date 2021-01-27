@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'votes/index'
   get 'categories/index'
   # get 'articles/index'
   # get 'sessions/new'
