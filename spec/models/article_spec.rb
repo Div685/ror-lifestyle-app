@@ -9,6 +9,7 @@ RSpec.describe Article, type: :model do
     it { should have_many(:votes) }
     it { should have_many(:categories_per_articles) }
     it { should have_many(:categories).through(:categories_per_articles) }
+    it { should have_many(:comments) }
   end
 
   describe 'Validations' do

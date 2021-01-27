@@ -3,6 +3,7 @@ class Article < ApplicationRecord
   has_many :votes, class_name: 'Vote', foreign_key: 'articleId'
   has_many :categories_per_articles, class_name: 'CategoriesPerArticle'
   has_many :categories, through: :categories_per_articles, source: :category
+  has_many :comments, dependent: :destroy
 
   has_one_attached :image
 

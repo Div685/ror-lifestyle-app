@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'Associations' do
     it { should have_many(:articles).with_foreign_key('authorId') }
     it { should have_many(:votes) }
+    it { should have_many(:comments) }
   end
 
   describe 'Validateions' do
