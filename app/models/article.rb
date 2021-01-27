@@ -4,6 +4,8 @@ class Article < ApplicationRecord
   has_many :categories_per_articles, class_name: 'CategoriesPerArticle'
   has_many :categories, through: :categories_per_articles, source: :category
 
-  validates_presence_of :title, :text, :image, :authorId
+  has_one_attached :image
+
+  validates_presence_of :title, :text
   validates :title, length: { minimum: 3, maximum: 90 }
 end

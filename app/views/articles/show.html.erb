@@ -3,3 +3,7 @@
 <%= vote_article(@article) %>
 <br >
 <%= @article.votes.count %> votes for this article
+
+<% if @article.image.attached? %>
+  <%= image_tag @article.image, style: 'width: 200px; display: block' %>
+<% end %>

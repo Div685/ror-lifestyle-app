@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   subject do
-    described_class.new(title: '', text: '', image: '')
+    described_class.new(title: '', text: '')
   end
   describe 'Associations' do
     it { should belong_to(:author).class_name(:User) }
@@ -29,10 +29,6 @@ RSpec.describe Article, type: :model do
 
     context 'when text is nil' do
       it { should validate_presence_of(:text) }
-    end
-
-    context 'when image is nil' do
-      it { should validate_presence_of(:image) }
     end
   end
 end
