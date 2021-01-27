@@ -11,3 +11,20 @@
     color: #EC6010;
   }
 }
+
+.cat-button {
+  background-color: #EC6010 !important;
+  border-color: #EC6010 !important;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  
+}
+
+.cat-button:hover {
+  text-decoration: none;
+  color: #fff;
+}

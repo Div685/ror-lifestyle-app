@@ -17,14 +17,14 @@
          label_html: {class: "lable "},
           placeholder: "Title" %> <br>
 
-          <div class="d-flex justify-content-between">
-            <strong class="">Categories</strong>
-            <strong class="d-flex justify-content-end">select one or multiple categories from list</strong>
+          <div class="m-0 p-0 d-flex justify-content-between col-9">
+            <strong class="m-0">Categories</strong>
+            <strong class="d-flex justify-content-end ">select one or multiple categories from list</strong>
           </div>
 
-          <div class="form-group">
-            <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true, :include_blank => false, :class => 'form-control selectpicker' }) %>
-            <br>
+          <div class="form-group d-flex justify-content-between">
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true, :include_blank => true,:class => 'form-control js-example-basic-multiple col-9', required: true }) %>
+            <%= link_to 'Create Category', new_category_path, class: "cat-button" %>
           </div>
           
 
