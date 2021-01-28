@@ -28,3 +28,80 @@
   text-decoration: none;
   color: #fff;
 }
+
+.hero-section {
+  position: relative;
+
+  .hero-image {
+
+    figure{
+      margin: 0;
+      background-image: linear-gradient(
+        180deg
+        , rgba(0,0,0,0.34) 0, rgba(0,0,0,0.338) 3.5%, rgba(0,0,0,0.324) 7%, rgba(0,0,0,0.306) 10.35%, rgba(0,0,0,0.285) 13.85%, rgba(0,0,0,0.262) 17.35%, rgba(0,0,0,0.237) 20.85%, rgba(0,0,0,0.213) 24.35%, rgba(0,0,0,0.188) 27.85%, rgba(0,0,0,0.165) 31.35%, rgba(0,0,0,0.144) 34.85%, rgba(0,0,0,0.126) 38.35%, rgba(0,0,0,0.112) 41.85%, rgba(0,0,0,0.103) 45.35%, rgba(0,0,0,0.1) 48.85%, rgba(0,0,0,0.103) 52.35%, rgba(0,0,0,0.112) 55.85%, rgba(0,0,0,0.126) 59.35%, rgba(0,0,0,0.144) 62.85%, rgba(0,0,0,0.165) 66.35%, rgba(0,0,0,0.188) 69.85%, rgba(0,0,0,0.213) 73.35%, rgba(0,0,0,0.237) 76.85%, rgba(0,0,0,0.262) 80.35%, rgba(0,0,0,0.285) 83.85%, rgba(0,0,0,0.306) 87.35%, rgba(0,0,0,0.324) 90.85%, rgba(0,0,0,0.338) 94.35%, rgba(0,0,0,0.347) 97.85%, rgba(0,0,0,0.35));
+      
+      img {
+        background-size: cover;
+        background-position: center;
+        height: 75vh;
+        z-index: -1;
+        position: relative;
+        width: 100%;
+      }
+      
+      figcaption {
+        position: absolute;
+        bottom: 12%;
+        font-weight: 700 !important;
+        color: #fd6000;
+        left: 1.5%;
+        font-size: 20px;
+      }
+    
+      p {
+        position: absolute;
+        bottom: 2%;
+        left: 1.5%;
+        color: #fff;
+      }
+    }
+
+  }
+
+}
+.category-grid-view {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  figure {
+    position: relative;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.555), black ), linear-gradient(to bottom right, rgba(0, 0, 0, 0.265) 30%, black);
+    margin: 0;
+    img {
+      object-fit: cover;
+      background-size: cover;
+      width: 100%;
+      height: 14rem;
+      z-index: -1;
+      position: relative;
+    }
+
+    figcaption {
+      position: absolute;
+      left: 5%;
+      top: 80%;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    a {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      color: #fff;
+      font-weight: 800;
+      text-transform: capitalize;
+      font-size: 20px;
+    }
+  }
+}

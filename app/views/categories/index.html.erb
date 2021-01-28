@@ -3,6 +3,7 @@
 
 <% @categories.each do |a| %>
   <li>
+  <%= a.priority%>
   <%= a.name %> |
   <% a.articles.each do |aaa| %>
     <%= aaa.title %>

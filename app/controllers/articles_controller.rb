@@ -2,7 +2,12 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.all.ordered_by_most_recent
     @article = Article.max_votes
-    @categories = Category.all.order('priority ASC').limit(8).includes(:articles)
+
+    @categories = Category.order('priority ASC').limit(8).includes(:articles).select do |cat|
+      cat.articles.count.positive?
+    end
+
+
   end
 
   def new

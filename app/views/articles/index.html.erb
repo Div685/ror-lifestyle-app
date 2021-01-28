@@ -1,33 +1,27 @@
 <div class="hero-section">
-
+  <div class="hero-image">
+    <figure>
+      <img src="<%= url_for(@article.image) %>" alt="img-hero">
+      <figcaption><%= @article.title %></figcaption>
+      <p> <%= @article.text.truncate(100) %> </p>
+    </figure>
+  </div>
 </div>
 <div class="category-list">
   <div class="category-grid-view">
     <% @categories.each do |category| %>
-    <div class="d-flex flex-row" >
-      
-      <%= category.name %> | 
-      <% if category.articles.exists? %>
-        <%= category.articles.last.title %>
-        <%= category.articles.last.text %>
-        <%= image_tag category.articles.last.image %>
-      <% else %>
-        <%= link_to 'Add Article', new_article_path %>
-      <% end %>
-    </div>
-  <% end %>
+
+      <div class="p-0 m-0">
+        <figure>
+          <img src="<%= url_for(category.articles.last.image) %>" alt="img-category" />
+          <%=link_to category.name, categories_path,class: "category-title-link" %>
+          <figcaption><%= category.articles.last.title %></figcaption>
+        </figure>
+        
+          
+      </div>
+    <% end %>
   </div>
 </div>
-
-
-<div style="background-image: url(<%= url_for("https://blogs.cdc.gov/publichealthmatters/files/2020/05/golden_retiver_cat_cropped.jpg") %>)">
-</div>  
-  
-  <% if @article.image.attached? %>
-    <%= image_tag @article.image, style: 'width: 200px; display: block' %>
-  <% else %>
-    <span>no image</span>
-  <% end %>
-  <%= @article.title %>
 
   

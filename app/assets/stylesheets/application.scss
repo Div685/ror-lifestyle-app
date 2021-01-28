@@ -21,6 +21,13 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
+.fix-top-nav {
+  position: sticky;
+  z-index: 1020;
+  top: 0;
+  background: #fff;
+}
+
 .logo {
   .logo-text {
     color: #4e443e;
