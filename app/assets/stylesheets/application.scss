@@ -21,6 +21,11 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
+body{
+  position: relative;
+  min-height: 100vh;
+}
+
 .fix-top-nav {
   position: sticky;
   z-index: 1020;
@@ -64,6 +69,9 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
   display: flex;
   align-items: center;
   flex-grow: 3;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
 
   .logo {
     flex-grow: 1;

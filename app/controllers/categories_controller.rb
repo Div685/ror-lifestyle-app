@@ -21,7 +21,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.includes(articles: :author).find(params[:id])
   end
 
   def destroy

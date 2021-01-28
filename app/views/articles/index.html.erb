@@ -2,7 +2,7 @@
   <div class="hero-image">
     <figure>
       <img src="<%= url_for(@article.image) %>" alt="img-hero">
-      <figcaption><%= @article.title %></figcaption>
+      <figcaption><%=link_to @article.title, article_path(@article) %></figcaption>
       <p> <%= @article.text.truncate(100) %> </p>
     </figure>
   </div>
@@ -14,12 +14,11 @@
       <div class="p-0 m-0">
         <figure>
           <img src="<%= url_for(category.articles.last.image) %>" alt="img-category" />
-          <%=link_to category.name, categories_path,class: "category-title-link" %>
-          <figcaption><%= category.articles.last.title %></figcaption>
-        </figure>
-        
-          
+          <%=link_to category.name, category_path(category),class: "category-title-link" %>
+          <figcaption><%=link_to category.articles.last.title, article_path(category.articles.last) %></figcaption>
+        </figure>   
       </div>
+
     <% end %>
   </div>
 </div>
