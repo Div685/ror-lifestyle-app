@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
 
     respond_to do |format|
       if @category.save
-        format.html { redirect_to root_path, notice: 'Category was successfully Created!' }
+        format.html { redirect_to new_article_path, notice: 'Category was successfully Created!' }
       else
         format.html { render :new }
         format.json { render json: @category.errors, status: :unprocessable_entity }

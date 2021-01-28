@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all
+    @articles = Article.all.ordered_by_most_recent
+    @article = Article.max_votes
+    @categories = Category.all.order('priority ASC').limit(8).includes(:articles)
   end
 
   def new

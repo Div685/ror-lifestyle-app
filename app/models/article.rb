@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'authorId'
+
+  scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  
   has_many :votes, class_name: 'Vote', foreign_key: 'articleId'
   has_many :categories_per_articles, class_name: 'CategoriesPerArticle'
   has_many :categories, through: :categories_per_articles, source: :category
@@ -9,4 +12,13 @@ class Article < ApplicationRecord
 
   validates_presence_of :title, :text
   validates :title, length: { minimum: 3, maximum: 90 }
+
+  accepts_nested_attributes_for :categories_per_articles
+
+  def self.max_votes
+    votes = Article.joins(:votes).where('articles.id = votes.articleId').group('articles.id').count
+    result = votes.max_by { |_k, v| v}.first
+    Article.find(result)
+  end
+
 end

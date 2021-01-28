@@ -1,16 +1,33 @@
-<h1>Articles#index</h1>
-<p>Find me in app/views/articles/index.html.erb</p>
-<% @articles.each do |article| %>
-  <ul>
-    <li>
-      <%=link_to article.title, article_path(article), class: "" %> | 
+<div class="hero-section">
+
+</div>
+<div class="category-list">
+  <div class="category-grid-view">
+    <% @categories.each do |category| %>
+    <div class="d-flex flex-row" >
       
-      <% article.categories.each do |a| %>
-        <%= a.name %>
-        <p>
-        <%= article.text %>
-        </p>
+      <%= category.name %> | 
+      <% if category.articles.exists? %>
+        <%= category.articles.last.title %>
+        <%= category.articles.last.text %>
+        <%= image_tag category.articles.last.image %>
+      <% else %>
+        <%= link_to 'Add Article', new_article_path %>
       <% end %>
-    </li>
-  </ul>
-<% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+<div style="background-image: url(<%= url_for("https://blogs.cdc.gov/publichealthmatters/files/2020/05/golden_retiver_cat_cropped.jpg") %>)">
+</div>  
+  
+  <% if @article.image.attached? %>
+    <%= image_tag @article.image, style: 'width: 200px; display: block' %>
+  <% else %>
+    <span>no image</span>
+  <% end %>
+  <%= @article.title %>
+
+  
