@@ -10,11 +10,11 @@
     padding: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #EC6010;
+    color: #ec6010;
   }
 }
 
-.grid-show-article{
+.grid-show-article {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
@@ -31,17 +31,16 @@
 
     h4 {
       a {
-        color: #EC6010;
-        border-bottom: 4px solid #EC6010;
+        color: #ec6010;
+        border-bottom: 4px solid #ec6010;
         position: absolute;
         text-decoration: none;
-        
-        &:hover{
-          color: #95918C;
+
+        &:hover {
+          color: #95918c;
           border-bottom: 4px solid #95918c;
         }
       }
-
     }
 
     p {

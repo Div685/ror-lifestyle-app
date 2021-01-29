@@ -6,7 +6,7 @@ RSpec.describe ArticlesController, type: :feature do
     {
       authorId: user,
       title: 'Article',
-      text: 'something',
+      text: 'something'
     }
   end
   let(:article) do

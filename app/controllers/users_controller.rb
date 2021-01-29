@@ -34,7 +34,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name)
   end
 
-  def set_user
-  end
-
+  def set_user; end
 end

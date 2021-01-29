@@ -21,6 +21,4 @@ RSpec.describe UsersController, type: :feature, order: :defined do
       expect(page).to have_current_path('/articles/new')
     end
   end
-
-  
-end 
+end

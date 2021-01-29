@@ -2,7 +2,7 @@ class Article < ApplicationRecord
   belongs_to :author, class_name: 'User', foreign_key: 'authorId'
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
-  
+
   has_many :votes, class_name: 'Vote', foreign_key: 'articleId'
   has_many :categories_per_articles, class_name: 'CategoriesPerArticle'
   has_many :categories, through: :categories_per_articles, source: :category
@@ -18,12 +18,11 @@ class Article < ApplicationRecord
 
   def self.max_votes
     votes = Article.joins(:votes).where('articles.id = votes.articleId').group('articles.id').count
-    result = votes.max_by { |_k, v| v}.first
+    result = votes.max_by { |_k, v| v }.first
     Article.find(result)
   end
 
   def check_file_presence
-    errors.add(:image, "no file added") unless image.attached?
-  end 
-
+    errors.add(:image, 'no file added') unless image.attached?
+  end
 end

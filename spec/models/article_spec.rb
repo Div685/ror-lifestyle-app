@@ -15,13 +15,13 @@ RSpec.describe Article, type: :model do
   describe 'Validations' do
     context 'when all fields are nil' do
       it 'is not valid ' do
-        expect(subject).to_not be_valid      
+        expect(subject).to_not be_valid
       end
     end
 
     context 'when length of title is greater less 3 and greater than 90' do
       it { should validate_length_of(:title).is_at_most(90) }
-      it { should validate_length_of(:title).is_at_least(3)}
+      it { should validate_length_of(:title).is_at_least(3) }
     end
 
     context 'when title is nil' do

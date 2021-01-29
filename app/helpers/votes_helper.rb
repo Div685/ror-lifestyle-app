@@ -3,12 +3,12 @@ module VotesHelper
     if current_user
       vote = Vote.find_by(article: article, user: current_user)
       if vote
-        content_tag :span, "#{ current_user.name }, you have aready voted", class: "text-danger text-capitalize"
+        content_tag :span, "#{current_user.name}, you have aready voted", class: 'text-danger text-capitalize'
       else
-        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: "btn vote-button")
+        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: 'btn vote-button')
       end
     else
-      link_to('Vote', new_session_path, class: "btn vote-button")
+      link_to('Vote', new_session_path, class: 'btn vote-button')
     end
   end
 end

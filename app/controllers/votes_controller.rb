@@ -1,6 +1,5 @@
 class VotesController < ApplicationController
-  def index
-  end
+  def index; end
 
   def create
     @vote = current_user.votes.new(articleId: params[:article_id])
@@ -13,7 +12,7 @@ class VotesController < ApplicationController
   end
 
   def destroy
-  vote = Vote.find_by(id: params[:id], user: current_user, articleId: params[:article_id])
+    vote = Vote.find_by(id: params[:id], user: current_user, articleId: params[:article_id])
     if vote
       vote.destroy
       redirect_to articles_path, notice: 'You have deleted your vote.'

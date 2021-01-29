@@ -13,15 +13,16 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap/scss/bootstrap";
+@import "bootstrap/scss/bootstrap";
 $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+
 @import '@fortawesome/fontawesome-free/scss/fontawesome';
 @import '@fortawesome/fontawesome-free/scss/solid';
 @import '@fortawesome/fontawesome-free/scss/regular';
 @import '@fortawesome/fontawesome-free/scss/brands';
 @import '@fortawesome/fontawesome-free/scss/v4-shims';
 
-body{
+body {
   position: relative;
   min-height: 100vh;
   background-color: #4e443e;
@@ -41,23 +42,24 @@ body{
   }
 
   .dot-icon {
-    color: #EC6010;
+    color: #ec6010;
     font-size: 14px;
   }
 }
+
 .nav-center {
   .login {
-    color: #95918C;
+    color: #95918c;
     font-size: 16px;
     margin: 0 5px;
     text-transform: uppercase;
     text-decoration: none;
-}
+  }
 }
 
 .nav-right {
   .login {
-    color: #95918C;
+    color: #95918c;
     font-size: 16px;
     margin: 0 5px;
     text-transform: uppercase;
@@ -65,13 +67,13 @@ body{
   }
 
   .search-icon {
-    color: #95918C;
+    color: #95918c;
     margin: 0 10px 0 20px;
   }
 }
 // Main section
 .error {
-  color:crimson;
+  color: crimson;
 }
 // Footer Section
 .footer {
@@ -92,7 +94,7 @@ body{
     font-size: 24px;
   }
 
-  .middle-footer{
+  .middle-footer {
     display: flex;
     justify-content: center;
     color: #fff;
@@ -100,7 +102,7 @@ body{
     font-size: 14px;
 
     span {
-      color: #EC6010;
+      color: #ec6010;
     }
   }
 
@@ -118,22 +120,21 @@ body{
     .footer-icon {
       padding: 5px;
       border-radius: 50%;
-      background: #EC6010;
+      background: #ec6010;
       margin-right: 5px;
     }
   }
 }
 
-.vote-button{
+.vote-button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #EC6010 !important;
-  border-color: #EC6010 !important;
+  background-color: #ec6010 !important;
+  border-color: #ec6010 !important;
   font-weight: 800;
   color: #fff;
   padding: 0 20px;
-  
 }
 
 .notice,

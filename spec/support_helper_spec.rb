@@ -10,5 +10,4 @@ module SupportHelperSpec
     fill_in 'name', with: name
     click_button('Log In')
   end
-  
 end

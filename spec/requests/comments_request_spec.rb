@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Comments", type: :request do
-
-  describe "GET /create" do
+RSpec.describe 'Comments', type: :request do
+  describe 'GET /create' do
   end
-
 end

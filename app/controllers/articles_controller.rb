@@ -2,14 +2,11 @@ class ArticlesController < ApplicationController
   before_action :logged_in?, only: %i[show]
 
   def index
-    @articles = Article.all.ordered_by_most_recent
     @article = Article.max_votes
 
     @categories = Category.order('priority ASC').limit(8).includes(:articles).select do |cat|
       cat.articles.count.positive?
     end
-
-
   end
 
   def new
@@ -21,10 +18,10 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to root_path, notice: "Article was successfully Created!" }
+        format.html { redirect_to root_path, notice: 'Article was successfully Created!' }
       else
         format.html { render :new }
-        format.json { render json: @article.errors, status: :unprocessable_entity}
+        format.json { render json: @article.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -36,7 +33,7 @@ class ArticlesController < ApplicationController
   end
 
   private
-  
+
   def article_params
     params.require(:article).permit(:title, :text, :image, category_ids: [])
   end
