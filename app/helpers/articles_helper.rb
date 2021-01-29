@@ -13,8 +13,3 @@ module ArticlesHelper
     end
   end
 end
-# \   <% if @article.votes.count == 1 %>
-# <span class="m-3 ">Total Vote: <%= @article.votes.count %> </span>
-# <% else %>
-# <span class="m-3 ">Total Votes: <%= @article.votes.count %> </span>
-# <% end %>
