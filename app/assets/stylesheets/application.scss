@@ -145,12 +145,15 @@ body{
   padding: 7px;
   color: #fff;
   font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notice {
-  background-color: #EC6010;
+  background-color: #4e443e;
 }
 
 .alert {
-  background-color: #EC6010;
+  background-color: #4e443e;
 }

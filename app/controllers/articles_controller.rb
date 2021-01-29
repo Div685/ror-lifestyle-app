@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :logged_in?, only: %i[show]
+
   def index
     @articles = Article.all.ordered_by_most_recent
     @article = Article.max_votes
