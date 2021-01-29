@@ -24,6 +24,7 @@ $fa-font-path: '@fortawesome/fontawesome-free/webfonts';
 body{
   position: relative;
   min-height: 100vh;
+  background-color: #4e443e;
 }
 
 .fix-top-nav {
@@ -43,6 +44,15 @@ body{
     color: #EC6010;
     font-size: 14px;
   }
+}
+.nav-center {
+  .login {
+    color: #95918C;
+    font-size: 16px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
 }
 
 .nav-right {
@@ -124,4 +134,23 @@ body{
   color: #fff;
   padding: 0 20px;
   
+}
+
+.notice,
+.alert {
+  margin-bottom: 0;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding: 7px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.notice {
+  background-color: #EC6010;
+}
+
+.alert {
+  background-color: #EC6010;
 }

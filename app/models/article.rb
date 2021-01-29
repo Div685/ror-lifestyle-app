@@ -12,6 +12,7 @@ class Article < ApplicationRecord
 
   validates_presence_of :title, :text
   validates :title, length: { minimum: 3, maximum: 90 }
+  validates_presence_of :check_file_presence
 
   accepts_nested_attributes_for :categories_per_articles
 
@@ -20,5 +21,9 @@ class Article < ApplicationRecord
     result = votes.max_by { |_k, v| v}.first
     Article.find(result)
   end
+
+  def check_file_presence
+    errors.add(:image, "no file added") unless image.attached?
+  end 
 
 end

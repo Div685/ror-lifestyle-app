@@ -15,11 +15,7 @@
       <hr class="m-3">
       <div class="d-flex justify-content-between mb-3 border-top-1 border-dark">
         <div>
-          <% if @article.votes.count == 1 %>
-            <span class="m-3 ">Total Vote: <%= @article.votes.count %> </span>
-          <% else %>
-            <span class="m-3 ">Total Votes: <%= @article.votes.count %> </span>
-          <% end %>
+          <%=  vote_plural %>
         </div>
         <div>
           <p class="h5 text-dark align-items-center mb-0 text-capitalize mr-3"> <%= @article.author.name %>
@@ -29,11 +25,8 @@
       </div>
 
        <div class="article-comment">
-
         <%= render partial: 'comments/comment', collection: @article.comments %>
-        <% if current_user %>
-          <%= render partial: 'comments/form' %>
-        <% end %>
+        <%= comment_form %>
       </div>
     </div>
 

@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to root_path, notice: "Article was successfully Created! }" }
+        format.html { redirect_to root_path, notice: "Article was successfully Created!" }
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity}
