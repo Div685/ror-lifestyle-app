@@ -2,7 +2,7 @@
   <div class="title">
     <h2><%= @category.name %> </h2>
   </div>
-  <div class="grid-show-article">
+  <div class="grid-show-article p-2">
     <% @category.articles.each do |article| %>
     
     <article>
@@ -12,12 +12,16 @@
           <% end %>
       </div>
       <div class="content-article col-6 pr-0">
-        <h4 class="linkk">
+        <h4 class="linkk ml-n2">
           <%=link_to article.title, article_path(article) %>
         </h4>
-        <p class="mr-2 text-white" >
+        <p class="mr-3 ml-n2 text-white" >
           <%= article.text %>
         </p>
+        <div class="author-vote">  
+          <span class="author-name">By: <%= article.author.name %></span> 
+          <span class="vote-name"> <%= vote_article(article) %> </span>
+        </div>
       </div>
     </article>
     <% end %>
