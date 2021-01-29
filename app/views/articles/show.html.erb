@@ -1,20 +1,28 @@
 
 <div class="main-article-show">
-  <div class="image-banner">
-    <img src="<%= url_for(@article.image) %>" alt="img-banner">
-  </div>
+  
   <div class="main-body-show">
-    <div class="box bg-light">
-      <h2 class="text-uppercase"><%= @article.title %></h2>
-      <%= vote_article(@article) %>
-      <p><%= @article.text %></p>
+    <div class="image-banner">
+      <img src="<%= url_for(@article.image) %>" alt="img-banner">
     </div>
 
+    <div class="box bg-light container">
+      <div class="d-flex justify-content-between m-3">
+        <h2 class="text-uppercase"><%= @article.title %></h2>
+        <%= vote_article(@article) %>
+      </div>
+      <p class="m-3"><%= @article.text %></p>
+    </div>
+
+    
+
+<!-- 
 
 <%= @article.title %>
 <%= vote_article(@article) %>
 <br >
 <%= @article.votes.count %> votes for this article
+-->
   </div>
 </div>
 

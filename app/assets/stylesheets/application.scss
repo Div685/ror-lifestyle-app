@@ -113,3 +113,15 @@ body{
     }
   }
 }
+
+.vote-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EC6010 !important;
+  border-color: #EC6010 !important;
+  font-weight: 800;
+  color: #fff;
+  padding: 0 20px;
+  
+}

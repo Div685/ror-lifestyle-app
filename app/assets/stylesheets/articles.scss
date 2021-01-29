@@ -86,7 +86,7 @@
 .category-grid-view {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  margin-bottom: 68px;
+  margin-bottom: 67px;
 
   figure {
     position: relative;
@@ -139,23 +139,39 @@
 // show page
 
 .main-article-show {
-  
+  background-color: #4e443e;
+  margin-bottom: 67px;
+
   .image-banner {
 
     img {
-      // object-fit: cover;
-      // background-size: cover;
-      // width: 100%;
-      // height: 24rem;
+      object-fit: cover;
+      background-size: cover;
+      width: 100%;
+      height: 70vh;
+      background-position: center;
     }
   }
 
   .main-body-show {
-    background-color: #4e443e;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+
+    .box {
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      padding: 1rem;
+      box-shadow: 0 4px 8px 0 rgba(76, 68, 68, 0.2);
+      transition: 0.3s;
+      margin: 30px auto;
+
+      p {
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 9;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+      }
+    }
   }
 }

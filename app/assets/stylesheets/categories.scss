@@ -1,13 +1,17 @@
 .main-category-show {
-  margin-bottom: 68px;
+  margin-bottom: 67px;
+  background-color: #4e443e;
 }
+
 .title {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #EC6010;
+  h2 {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #EC6010;
+  }
 }
 
 .grid-show-article{

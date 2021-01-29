@@ -5,10 +5,10 @@ module VotesHelper
       if vote
         content_tag :span, "#{ current_user.name }, you have aready voted"
       else
-        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: "btn")
+        link_to('Vote', article_votes_path(article_id: article.id), method: :post, class: "btn vote-button")
       end
     else
-      link_to('Vote', new_session_path, class: "")
+      link_to('Vote', new_session_path, class: "btn vote-button")
     end
   end
 end
