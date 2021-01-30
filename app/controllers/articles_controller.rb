@@ -2,9 +2,15 @@ class ArticlesController < ApplicationController
   before_action :logged_in?, only: %i[show]
 
   def index
-    @article = Article.max_votes
+    if Vote.count.positive?
+      @article = Article.max_votes
+    elsif Article.count.positive?
+      @article = Article.first
+    else
+      redirect_to new_article_path, notice: "No article found! Create an Article"
+    end
 
-    @categories = Category.order('priority ASC').limit(8).includes(:articles).select do |cat|
+    @categories = Category.order('priority ASC').limit(4).includes(:articles).select do |cat|
       cat.articles.count.positive?
     end
   end
@@ -35,6 +41,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :image, category_ids: [])
+    params.require(:article).permit(:title, :text, :img, category_ids: [])
   end
 end

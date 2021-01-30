@@ -1,7 +1,7 @@
 <div class="hero-section">
   <div class="hero-image">
     <figure>
-      <img src="<%= url_for(@article.image) %>" alt="img-hero">
+      <img src="<%= url_for(@article.img) %>" alt="img-hero">
       <figcaption><%=link_to @article.title, article_path(@article) %></figcaption>
       <p> <%= @article.text.truncate(100) %> </p>
     </figure>
@@ -13,7 +13,7 @@
 
       <div class="p-0 m-0">
         <figure>
-          <img src="<%= url_for(category.articles.last.image) %>" alt="img-category" />
+          <img src="<%= url_for(category.articles.last.img) %>" alt="img-category" />
           <%=link_to category.name, category_path(category),class: "category-title-link" %>
           <figcaption><%=link_to category.articles.last.title, article_path(category.articles.last) %></figcaption>
         </figure>   

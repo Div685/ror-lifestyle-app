@@ -10,7 +10,7 @@
     padding: 10px;
     text-transform: uppercase;
     font-weight: bold;
-    color: #ec6010;
+    color: #fff;
   }
 }
 
@@ -35,6 +35,9 @@
         border-bottom: 4px solid #ec6010;
         position: absolute;
         text-decoration: none;
+        margin: 10px 0;
+        font-weight: 700;
+        text-transform: capitalize;
 
         &:hover {
           color: #95918c;
@@ -45,12 +48,12 @@
 
     p {
       position: absolute;
-      top: 16%;
+      top: 20%;
       font-size: 14px;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 5;
+      -webkit-line-clamp: 7;
       -webkit-box-orient: vertical;
       text-align: justify;
     }
@@ -58,19 +61,30 @@
     .author-vote {
       position: absolute;
       bottom: 0;
-      color: #fff;
+      color: #000;
       font-weight: 700;
-      margin-bottom: 5px;
+      margin: 0 0 10px 0;
       text-transform: capitalize;
       display: flex;
+      justify-content: space-between;
+      width: 100%;
 
       .author-name {
-        margin: 0 5px 0 0;
+        margin: 0 5px;
       }
 
       .vote-name {
-        margin: 0 0 0 15px;
+        margin: 0  5px;
       }
     }
+
+    .image-reversed {
+      order: 2;
+    }
+
+    .information-reversed {
+      order: 1;
+    }
+
   }
 }

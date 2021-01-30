@@ -1,19 +1,20 @@
+<% rev = false %>
 <section class="main-category-show">
   <div class="title">
     <h2><%= @category.name %> </h2>
   </div>
-  <div class="grid-show-article p-2">
-    <% @category.articles.each do |article| %>
+  <div class="grid-show-article">
+    <% @category.articles.each_with_index do |article, i| %>
     
     <article>
-      <div class="image-article col-6 pl-0">
-        <img src="<%= url_for(article.image) %>" alt="img">
+      <div class="image-article col-6 p-0 <%=rev ? 'image-reversed' : '' %>">
+        <img src="<%= url_for(article.img) %>" alt="img">
       </div>
-      <div class="content-article col-6 pr-0">
-        <h4 class="linkk ml-n2">
-          <%=link_to article.title, article_path(article) %>
+      <div class="content-article col-6 p-0 bg-light <%=rev ? 'information-reversed' : '' %>">
+        <h4 class="linkk ml-2">
+          <%=link_to article.title.truncate(20), article_path(article) %>
         </h4>
-        <p class="mr-3 ml-n2 text-white" >
+        <p class="mr-3 ml-2" >
           <%= article.text %>
         </p>
         <div class="author-vote">  
@@ -22,6 +23,7 @@
         </div>
       </div>
     </article>
+    <% rev = !rev if (i+1).even? %>
     <% end %>
   </div>
 </section>

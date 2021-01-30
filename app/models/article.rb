@@ -8,21 +8,29 @@ class Article < ApplicationRecord
   has_many :categories, through: :categories_per_articles, source: :category
   has_many :comments, dependent: :destroy
 
-  has_one_attached :image
+  has_one_attached :img
 
   validates_presence_of :title, :text
   validates :title, length: { minimum: 3, maximum: 90 }
-  validates_presence_of :check_file_presence
+  validate :check_file_presence
 
   accepts_nested_attributes_for :categories_per_articles
 
   def self.max_votes
-    votes = Article.joins(:votes).where('articles.id = votes.articleId').group('articles.id').count
+    votes = Article
+            .joins(:votes)
+            .where('articles.id = votes.articleId')
+            .group('articles.id')
+            .count
     result = votes.max_by { |_k, v| v }.first
     Article.find(result)
   end
 
   def check_file_presence
-    errors.add(:image, 'no file added') unless image.attached?
+    if img.attached? && !img.content_type.in?(%w(image/jpeg image/png image/jpg))
+      errors.add(:img, 'file must be jpeg or png')
+    elsif img.attached? == false
+      errors.add(:img, "required")
+    end
   end
 end
