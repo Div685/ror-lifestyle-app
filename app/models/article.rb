@@ -18,19 +18,19 @@ class Article < ApplicationRecord
 
   def self.max_votes
     votes = Article
-            .joins(:votes)
-            .where('articles.id = votes.articleId')
-            .group('articles.id')
-            .count
+      .joins(:votes)
+      .where('articles.id = votes.articleId')
+      .group('articles.id')
+      .count
     result = votes.max_by { |_k, v| v }.first
     Article.find(result)
   end
 
   def check_file_presence
-    if img.attached? && !img.content_type.in?(%w(image/jpeg image/png image/jpg))
+    if img.attached? && !img.content_type.in?(%w[image/jpeg image/png image/jpg])
       errors.add(:img, 'file must be jpeg or png')
     elsif img.attached? == false
-      errors.add(:img, "required")
+      errors.add(:img, 'required')
     end
   end
 end

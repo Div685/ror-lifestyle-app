@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     elsif Article.count.positive?
       @article = Article.first
     else
-      redirect_to new_article_path, notice: "No article found! Create an Article"
+      redirect_to new_article_path, notice: 'No article found! Create an Article'
     end
 
     @categories = Category.order('priority ASC').limit(4).includes(:articles).select do |cat|
