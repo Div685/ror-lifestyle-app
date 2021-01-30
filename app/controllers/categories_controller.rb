@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :logged_in?, only: %i[index show]
+  before_action :logged_in?, only: %i[index show create new]
 
   def index
     @categories = Category.all
