@@ -1,6 +1,8 @@
 # RoR Capstone: !PeTsLifestyle App
 
 ![screenshot](screencapture.png)
+**Articles under a category page**
+![screenshot](screencapture-article.png)
 
 > This is the RoR Capstone project. Main goal for this project was to build lifestyle article app by using Given Design and completing the requirements mentioned in the project [requirement](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561).
 **!PeTsLifestyLE** website is about reading and writng an article abouts pets. Users can also votes and comments on an article but to do that users needs to signup and login.
