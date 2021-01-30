@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :logged_in?, only: %i[show]
+  before_action :logged_in?, only: %i[show create]
 
   def index
     if Vote.count.positive?
