@@ -4,6 +4,5 @@ class CreateComments < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
-    add_index :comments, :article_id
   end
 end
