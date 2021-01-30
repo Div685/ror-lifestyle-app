@@ -22,7 +22,7 @@ class Article < ApplicationRecord
       .where('articles.id = votes.articleId')
       .group('articles.id')
       .count
-    result = votes.max_by { |_k, v| v }.first
+    result =  Vote.all.group(:articleId).count.max_by { |_k, v| v }.first #votes.max_by { |_k, v| v }.first
     Article.find(result)
   end
 
