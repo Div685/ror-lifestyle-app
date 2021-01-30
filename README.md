@@ -27,7 +27,7 @@
 
 ## Live Demo
 
-Checkout the live demo at [Live]()
+Checkout the live demo at [Live](https://lit-wave-20571.herokuapp.com/)
 
 
 ## Getting Started
