@@ -103,6 +103,7 @@
     height: 70vh;
     background: url(https://i.pinimg.com/originals/e6/5b/5f/e65b5f5f4b45cc3c5cc15a12ad7004dd.jpg) no-repeat;
     background-size: cover;
+
     img {
       object-fit: cover;
       background-size: cover;
@@ -148,7 +149,7 @@
     figure {
       margin: 0;
       height: 75vh;
-      background-image:
+      background:
         linear-gradient(
           180deg,
           rgba(0, 0, 0, 0.34) 0,
@@ -180,8 +181,10 @@
           rgba(0, 0, 0, 0.324) 90.85%,
           rgba(0, 0, 0, 0.338) 94.35%,
           rgba(0, 0, 0, 0.347) 97.85%,
-          rgba(0, 0, 0, 0.35), url(https://i.pinimg.com/originals/e6/5b/5f/e65b5f5f4b45cc3c5cc15a12ad7004dd.jpg) no-repeat
-        );
+          rgba(0, 0, 0, 0.35)
+        ),
+        url(https://i.pinimg.com/originals/e6/5b/5f/e65b5f5f4b45cc3c5cc15a12ad7004dd.jpg) no-repeat;
+      background-size: cover;
 
       img {
         background-size: cover;

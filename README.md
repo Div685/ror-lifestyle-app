@@ -4,7 +4,7 @@
 **Articles under a category page**
 ![screenshot](screencapture-article.png)
 
-> This is the RoR Capstone project. Main goal for this project was to build lifestyle article app by using Given Design and completing the requirements mentioned in the project [requirement](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561).
+> This is the RoR Capstone project. The main goal for this project was to build a lifestyle article app by using Given Design and completing the requirements mentioned in the project [requirement](https://www.notion.so/Lifestyle-articles-b82a5f10122b4cec924cd5d4a6cf7561).
 **!PeTsLifestyLE** The website is about reading and writing an article about pets. Users can also vote and comment on an article but to do that users need to signup and login.
 
 ## Features
@@ -33,6 +33,28 @@ Checkout the live demo at [Live](https://lit-wave-20571.herokuapp.com/)
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
+
+1. If you're running the Windows Operating System, open your command prompt. On Linux, Open your terminal.
+
+2. Copy and paste the following code into the Terminal:
+
+   ```https://github.com/Div685/ror-lifestyle-app.git ```
+
+3. Press Enter.
+
+4. Once the repository has been cloned, navigate inside the repository
+
+5. After you will need to update and install some of the depedency. Use following command to install the packages
+ - `bundle install`
+ - `yarn install`
+ - `rails db:create`
+ - `rake db:migrate`
+
+6. once you install the packages and migrate the database you can run the server
+ - `rails s` or `rails server`
+
+7. Enjoy
+
 
 ### Prerequisites
 
@@ -98,7 +120,7 @@ e.g ` rspec spec/models/like_spec.rb `
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](../../issues).
 
 ## Show your support
 

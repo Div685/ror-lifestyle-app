@@ -17,12 +17,11 @@ class Article < ApplicationRecord
   accepts_nested_attributes_for :categories_per_articles
 
   def self.max_votes
-    votes = Article
-      .joins(:votes)
-      .where('articles.id = votes.articleId')
-      .group('articles.id')
-      .count
-    result =  Vote.all.group(:articleId).count.max_by { |_k, v| v }.first #votes.max_by { |_k, v| v }.first
+    # votes = Article.joins(:votes)
+    #   .where('articles.id = votes.articleId')
+    #   .group('articles.id')
+    #   .count
+    result = Vote.all.group(:articleId).count.max_by { |_k, v| v }.first # votes.max_by { |_k, v| v }.first
     Article.find(result)
   end
 

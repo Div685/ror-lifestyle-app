@@ -3,7 +3,6 @@ class ArticlesController < ApplicationController
 
   def index
     if Vote.count.positive?
-      # @article = Article.max_votes
       @vote = Vote.all.group(:articleId).count.max_by { |_k, v| v }.first
       @article = Article.find(@vote)
     elsif Article.count.positive?
