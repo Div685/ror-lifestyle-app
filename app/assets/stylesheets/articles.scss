@@ -30,6 +30,16 @@
 
 // Category list grid- index.html
 
+.figure:nth-child(odd) {
+  background: url(https://secure.img1-fg.wfcdn.com/im/53299221/compr-r85/4307/43074449/hanging-pug-puppy-statue.jpg);
+  background-size: cover;
+}
+
+.figure:nth-child(even) {
+  background: url(https://www.anythinggermanshepherd.com/wp-content/uploads/2019/11/American-German-Shepherd-vs-European-German-Shepherd.jpg);
+  background-size: cover;
+}
+
 .category-grid-view {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -39,14 +49,14 @@
     position: relative;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.555), black), linear-gradient(to bottom right, rgba(0, 0, 0, 0.265) 30%, black);
     margin: 0;
+    height: 16rem;
 
     img {
       object-fit: cover;
       background-size: cover;
       width: 100%;
-      height: 14rem;
+      height: 16rem;
       z-index: -1;
-      position: relative;
     }
 
     figcaption {
@@ -90,6 +100,9 @@
   margin-bottom: 67px;
 
   .image-banner {
+    height: 70vh;
+    background: url(https://i.pinimg.com/originals/e6/5b/5f/e65b5f5f4b45cc3c5cc15a12ad7004dd.jpg) no-repeat;
+    background-size: cover;
     img {
       object-fit: cover;
       background-size: cover;
@@ -134,6 +147,7 @@
   .hero-image {
     figure {
       margin: 0;
+      height: 75vh;
       background-image:
         linear-gradient(
           180deg,
@@ -166,7 +180,7 @@
           rgba(0, 0, 0, 0.324) 90.85%,
           rgba(0, 0, 0, 0.338) 94.35%,
           rgba(0, 0, 0, 0.347) 97.85%,
-          rgba(0, 0, 0, 0.35)
+          rgba(0, 0, 0, 0.35), url(https://i.pinimg.com/originals/e6/5b/5f/e65b5f5f4b45cc3c5cc15a12ad7004dd.jpg) no-repeat
         );
 
       img {

@@ -11,7 +11,7 @@
   <div class="category-grid-view">
     <% @categories.each do |category| %>
 
-      <div class="p-0 m-0">
+      <div class="figure p-0 m-0">
         <figure>
           <img src="<%= url_for(category.articles.last.img) %>" alt="img-category" />
           <%=link_to category.name, category_path(category),class: "category-title-link" %>
