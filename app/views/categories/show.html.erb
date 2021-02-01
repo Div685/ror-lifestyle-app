@@ -8,7 +8,7 @@
     
     <article>
       <div class="image-article col-6 p-0 <%=rev ? 'image-reversed' : '' %>">
-        <img src="<%= url_for(article.img) %>" alt="img">
+        <%= image_article(article.img) %>
       </div>
       <div class="content-article col-6 p-0 bg-light <%=rev ? 'information-reversed' : '' %>">
         <h4 class="linkk ml-2">
