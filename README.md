@@ -120,7 +120,7 @@ e.g ` rspec spec/models/like_spec.rb `
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues).
+Feel free to check the [issues page](https://github.com/Div685/ror-lifestyle-app/issues).
 
 ## Show your support
 
