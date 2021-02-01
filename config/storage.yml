@@ -30,6 +30,6 @@ local:
 
 google:
   service: GCS
-  credentials: <%= Rails.root.join("/keyfile.json") %>
+  credentials: <%= Rails.root.join("../keyfile.json") %>
   project: <%= ENV['GCS_PROJECT'] %>
   bucket: <%= ENV['GCS_BUCKET'] %>
