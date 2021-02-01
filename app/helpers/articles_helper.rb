@@ -15,7 +15,7 @@ module ArticlesHelper
     if article.attached?
       image_tag(url_for(article), alt: 'img-hero')
     else
-      image_tag(url_for('https://vitalplanet.com/wp-content/uploads/84726686_s.jpg'), alt: 'img-hero')
+      image_tag('https://vitalplanet.com/wp-content/uploads/84726686_s.jpg', alt: 'img-hero')
     end
   end
 end
