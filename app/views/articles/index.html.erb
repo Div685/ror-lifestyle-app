@@ -13,7 +13,7 @@
 
       <div class="figure p-0 m-0">
         <figure>
-          <%= image_article(category.articles.last.img) %>
+          <%= image_check(category.articles.last.image) %>
           <%=link_to category.name, category_path(category),class: "category-title-link" %>
           <figcaption><%=link_to category.articles.last.title, article_path(category.articles.last) %></figcaption>
         </figure>   

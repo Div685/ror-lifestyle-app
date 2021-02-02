@@ -12,7 +12,7 @@ class Article < ApplicationRecord
 
   validates_presence_of :title, :text, :image
   validates :title, length: { minimum: 3, maximum: 90 }
-  validate :check_file_presence
+  # validate :check_file_presence
 
   accepts_nested_attributes_for :categories_per_articles
 

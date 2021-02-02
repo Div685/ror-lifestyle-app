@@ -1,5 +1,4 @@
-<%= simple_form_for(@article) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@article) do |f| %>
     <% @article.errors.full_messages.each do |error| %>
         <div class="alert alert-danger">
           <%= error %>
@@ -9,12 +8,8 @@
   <div class="d-flex">
       <div class="w-100 my-2 ">
 
-        <%= f.input :title,
-         required: true,
-         label: "Title: ", 
-         input_html: { class: "form-control "},
-         wrapper: false, 
-         label_html: {class: "lable "},
+       <strong><%= f.label :title, "Title" %></strong><br />
+        <%= f.text_field :title, class: "form-control",
           placeholder: "Title" %> <br>
 
           <div class="m-0 p-0 d-flex justify-content-between col-9">
@@ -28,18 +23,18 @@
           </div>
           
 
-        <%= f.input :text,
+        <strong><%= f.label :text, "Content" %></strong><br />
+        <%= f.text_area :text, class:"p-3 form-control", rows: 5,
           required: true,
           label: "Text: ",
-          :input_html => { 'rows' => 5, 'cols' => 10, class: "p-3 form-control"},
           wrapper: false,
           label_html: { class: "label "},
           autofocus: true,
           placeholder: "Compose a new Article..."
         %>
         <br />
-        <%= f.input :image, as: :url,
-          :input_html => { class: "form-control" },
+        <strong><%= f.label :image, "Image link" %></strong><br />
+        <%= f.url_field :image, class: "form-control",
           label: "Image URL: ",
           required: true,
           label_html: { class: "label "},

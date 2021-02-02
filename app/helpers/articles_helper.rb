@@ -29,7 +29,7 @@ module ArticlesHelper
         alt: 'img-hero'
       )
     else
-      image_tag(article, alt: "img-check")
+      image_tag(article, alt: "Wrong Image-link")
     end
   end
 end
