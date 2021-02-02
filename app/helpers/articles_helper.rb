@@ -13,7 +13,7 @@ module ArticlesHelper
 
   def image_article(article)
     if article.attached?
-      image_tag(url_for(article), alt: 'img-hero', class: "img-article" )
+      image_tag(url_for(article), alt: 'img-hero', class: 'img-article')
     else
       image_tag('https://vitalplanet.com/wp-content/uploads/84726686_s.jpg', alt: 'img-hero-alt')
     end
