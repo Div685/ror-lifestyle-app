@@ -6,7 +6,7 @@ module ApplicationHelper
     else
       link_to('Login', new_session_path, class: 'login') + '|'.html_safe +
         link_to('Register', new_user_path, class: 'login') +
-        "<i class='search-icon fas fa-search'></i>".html_safe
+        "<i class='search-icon fas fa-search d-none d-md-block'></i>".html_safe
     end
   end
 

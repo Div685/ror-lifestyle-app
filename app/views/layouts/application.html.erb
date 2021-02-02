@@ -22,15 +22,29 @@
         <i class="dot-icon fas fa-circle"></i>
       </div>
 
-      <div class="nav-center">
+      <div class="nav-center d-none d-md-block">
          <%= link_to 'Home', root_path, class: "login" %>
         <%= nav_article %>
       </div>
 
-      <div class="nav-right d-flex flex-row align-items-center">
+      <div class="nav-right d-none d-md-flex flex-row align-items-center">
         <%=  nav_signup %>
       </div>
+
+      <span style="font-size:30px;cursor:pointer" class="d-md-none" onclick="openNav()">&#9776;</span>
+
     </nav>
+      <!-- nav mobile Screen-->
+      <div class="sidenav d-md-none d-lg-none d-flex flex-column" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <%= link_to 'Home', root_path, class: "login" %>
+          <%= nav_article %>
+        <%=  nav_signup %>
+      </div>
+      
+ 
+
+
     <% if flash[:notice] %>
       <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
           <p class="notice"><%= notice %></p> 
@@ -43,7 +57,7 @@
       </div>
     <% end %>
 
-    <div class="main-section overflow-hidden">
+    <div class="main-section overflow-hidden" id="main">
       <%= yield %>
     </div>
 
@@ -77,6 +91,16 @@
         $(document).ready(function() {
               $('.js-example-basic-multiple').select2();
           });
+
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginRight = "0";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginRight= "0";
+      }
     </script>
   </body>
 </html>
