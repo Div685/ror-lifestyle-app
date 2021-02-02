@@ -37,10 +37,16 @@
           autofocus: true,
           placeholder: "Compose a new Article..."
         %>
-
+        <br />
+        <%= f.input :image, as: :url,
+          :input_html => { class: "form-control" },
+          label: "Image URL: ",
+          required: true,
+          label_html: { class: "label "},
+          wrapper: false,
+           placeholder: "image URL" %>
+            
             <br />
-
-          <%= f.file_field :img, as: :file, input_html: { class: 'form-control' }, wrapper: false%>
           
       </div>
 
