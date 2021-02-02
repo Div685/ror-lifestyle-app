@@ -14,7 +14,7 @@ module ArticlesHelper
   def image_article(article)
     if article.attached?
       image_tag(
-        'https://besthqwallpapers.com/Uploads/16-7-2018/59527/thumb2-american-bulldog-a-large-white-brown-dog-pets-dog-breeds.jpg',
+        url_for(article),
         alt: 'img-hero'
       )
     else

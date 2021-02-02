@@ -42,6 +42,8 @@
            placeholder: "image URL" %>
             
             <br />
+
+            <%= f.file_field :img, as: :file, direct_upload: true, input_html: { class: 'form-control' }, wrapper: false%>
           
       </div>
 

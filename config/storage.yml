@@ -33,3 +33,6 @@ google:
   credentials: <%= Rails.root.join("../keyfile.json") %>
   project: <%= ENV['GCS_PROJECT'] %>
   bucket: <%= ENV['GCS_BUCKET'] %>
+
+cloudinary:      
+  service: Cloudinary
