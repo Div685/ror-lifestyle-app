@@ -1,0 +1,22 @@
+<%= simple_form_for(@category) do |f| %>
+  <%= f.error_notification %>
+  <div class="d-flex">
+      <div class="w-100 my-2 ">
+        <%= f.input :name,
+              required: true,
+              label: "Name: ", 
+              input_html: { class: "form-control "},
+              wrapper: false, 
+              label_html: {class: "lable "},
+                placeholder: "Category Name" %>
+        <%= f.input :priority,
+              required: true, 
+              label: "Priority: ", 
+              as: :numeric, 
+              input_html: { class: "form-control"},
+              wrapper: false, 
+              placeholder: "1..10" %>
+      </div>
+  </div>
+    <%= f.button :submit, class: "btn signup-button mb-3 my-1 text-white" %>
+<% end %>

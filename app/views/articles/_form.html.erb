@@ -1,0 +1,46 @@
+<%= form_for(@article) do |f| %>
+    <% @article.errors.full_messages.each do |error| %>
+        <div class="alert alert-danger">
+          <%= error %>
+        </div>
+    <% end %>
+
+  <div class="d-flex">
+      <div class="w-100 my-2 ">
+
+       <strong><%= f.label :title, "Title" %></strong><br />
+        <%= f.text_field :title, class: "form-control",
+          placeholder: "Title" %> <br>
+
+          <div class="m-0 p-0 d-flex justify-content-between col-9">
+            <strong class="m-0">Categories</strong>
+            <strong class="d-flex justify-content-end ">select one or multiple categories from list</strong>
+          </div>
+
+          <div class="form-group d-flex justify-content-between">
+            <%= f.collection_select(:category_ids, Category.all, :id, :name, {}, {:multiple => true, :include_blank => true,:class => 'form-control js-example-basic-multiple col-9', required: true }) %>
+            <%= link_to 'Create Category', new_category_path, class: "cat-button" %>
+          </div>
+          
+
+        <strong><%= f.label :text, "Content" %></strong><br />
+        <%= f.text_area :text, class:"p-3 form-control", rows: 5,
+          required: true,
+          label: "Text: ",
+          wrapper: false,
+          label_html: { class: "label "},
+          autofocus: true,
+          placeholder: "Compose a new Article..."
+        %>
+        <br />
+        <strong><%= f.label :image, "Image link" %></strong><br />
+         <%= f.file_field :img, as: :file, direct_upload: true, input_html: { class: 'form-control' }, wrapper: false%>
+          
+      </div>
+
+  </div>
+  <%= f.button :submit, class: "btn signup-button mb-3 my-1 text-white" %>
+
+<% end %>
+
+        

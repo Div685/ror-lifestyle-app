@@ -1,0 +1,34 @@
+
+<div class="main-article-show">
+  
+  <div class="main-body-show">
+    <div class="image-banner">
+     <%= image_article(@article.img) %>
+    </div>
+
+    <div class="box bg-light container">
+      <div class="d-flex justify-content-between m-3">
+        <h2 class="text-uppercase"><%= @article.title %></h2>
+        <%= vote_article(@article) %>
+      </div>
+      <p class="m-3 w-75"><%= @article.text %></p>
+      <hr class="m-3">
+      <div class="d-flex justify-content-between mb-3 border-top-1 border-dark">
+        <div>
+          <%=  vote_plural %>
+        </div>
+        <div>
+          <p class="h5 text-dark align-items-center mb-0 text-capitalize mr-3"> <%= @article.author.name %>
+            <i class="fas fa-user-circle"></i>
+          </p>
+        </div>
+      </div>
+
+       <div class="article-comment">
+        <%= render partial: 'comments/comment', collection: @article.comments %>
+        <%= comment_form %>
+      </div>
+    </div>
+  </div>
+</div>
+

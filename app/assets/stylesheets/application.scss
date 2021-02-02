@@ -1,0 +1,361 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap/scss/bootstrap";
+$fa-font-path: '@fortawesome/fontawesome-free/webfonts';
+
+@import '@fortawesome/fontawesome-free/scss/fontawesome';
+@import '@fortawesome/fontawesome-free/scss/solid';
+@import '@fortawesome/fontawesome-free/scss/regular';
+@import '@fortawesome/fontawesome-free/scss/brands';
+@import '@fortawesome/fontawesome-free/scss/v4-shims';
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background-color: #4e443e;
+}
+
+// mobie nav bar
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  margin-top: 75px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: #fff;
+}
+
+.fix-top-nav {
+  position: sticky;
+  z-index: 1020;
+  top: 0;
+  background: #fff;
+}
+
+.logo {
+  .logo-text {
+    color: #4e443e;
+    font-size: 24px;
+  }
+
+  .dot-icon {
+    color: #ec6010;
+    font-size: 14px;
+  }
+}
+
+.nav-center {
+  .login {
+    color: #95918c;
+    font-size: 16px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
+.nav-right {
+  .login {
+    color: #95918c;
+    font-size: 16px;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .search-icon {
+    color: #95918c;
+    margin: 0 10px 0 20px;
+  }
+}
+// Main section
+.error {
+  color: crimson;
+}
+// Footer Section
+.footer {
+  background-color: #4e443e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 3;
+  // position: absolute;
+  width: 100%;
+  bottom: 0;
+
+  .logo {
+    flex-grow: 1;
+  }
+
+  .footer-text {
+    color: #fff;
+    font-size: 24px;
+  }
+
+  .middle-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    flex-grow: 1;
+
+    span {
+      color: #ec6010;
+    }
+  }
+
+  .right-footer {
+    flex-grow: 1;
+    align-items: center;
+    display: flex;
+    margin: 8px 0 0 0;
+
+    .right-text {
+      color: #fff;
+      margin-right: 5px;
+    }
+
+    .footer-icon {
+      padding: 5px;
+      border-radius: 50%;
+      background: #ec6010;
+      margin-right: 5px;
+    }
+  }
+}
+
+.vote-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ec6010 !important;
+  border-color: #ec6010 !important;
+  font-weight: 800;
+  color: #fff;
+  padding: 0 20px;
+}
+
+.notice,
+.alert {
+  margin-bottom: 0;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  padding: 7px;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice {
+  background-color: #4e443e;
+}
+
+.alert {
+  background-color: #4e443e;
+}
+
+// Tablet Mode
+
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+
+  // Footer
+
+  .footer {
+    background-color: #4e443e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 3;
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+
+    .logo {
+      flex-grow: 1;
+    }
+
+    .footer-text {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .middle-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: #fff;
+      flex-grow: 1;
+      font-size: 14px;
+
+      span {
+        color: #ec6010;
+      }
+    }
+
+    .right-footer {
+      flex-grow: 1;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+
+      .right-text {
+        color: #fff;
+        margin-right: 5px;
+      }
+
+      .footer-icon {
+        padding: 5px;
+        border-radius: 50%;
+        background: #ec6010;
+        margin-right: 5px;
+      }
+    }
+  }
+}
+
+// Desktop Mode
+@media screen and (min-device-width: 1024px) {
+
+  // Nav Area
+  .fix-top-nav {
+    position: sticky;
+    z-index: 1020;
+    top: 0;
+    background: #fff;
+  }
+
+  .logo {
+    .logo-text {
+      color: #4e443e;
+      font-size: 24px;
+    }
+
+    .dot-icon {
+      color: #ec6010;
+      font-size: 14px;
+    }
+  }
+
+  .nav-center {
+    .login {
+      color: #95918c;
+      font-size: 16px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+  }
+
+  .nav-right {
+    .login {
+      color: #95918c;
+      font-size: 16px;
+      margin: 0 5px;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .search-icon {
+      color: #95918c;
+      margin: 0 10px 0 20px;
+    }
+  }
+
+  // Footer
+
+  .footer {
+    background-color: #4e443e;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 3;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+
+    .logo {
+      flex-grow: 1;
+    }
+
+    .footer-text {
+      color: #fff;
+      font-size: 24px;
+    }
+
+    .middle-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      color: #fff;
+      flex-grow: 1;
+      font-size: 14px;
+
+      span {
+        color: #ec6010;
+      }
+    }
+
+    .right-footer {
+      flex-grow: 1;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+
+      .right-text {
+        color: #fff;
+        margin-right: 5px;
+      }
+
+      .footer-icon {
+        padding: 5px;
+        border-radius: 50%;
+        background: #ec6010;
+        margin-right: 5px;
+      }
+    }
+  }
+}

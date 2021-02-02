@@ -1,0 +1,26 @@
+<div class="hero-section">
+  <div class="hero-image">
+    <figure>
+      <%= image_article(@article.img) %>
+      <figcaption><%=link_to @article.title, article_path(@article) %></figcaption>
+      <p> <%= @article.text.truncate(100) %> </p>
+    </figure>
+  </div>
+</div>
+<div class="category-list">
+  <div class="category-grid-view">
+    <% @categories.each do |category| %>
+
+      <div class="figure p-0 m-0">
+        <figure>
+          <%= image_article(category.articles.last.img) %>
+          <%=link_to category.name, category_path(category),class: "category-title-link" %>
+          <figcaption><%=link_to category.articles.last.title, article_path(category.articles.last) %></figcaption>
+        </figure>   
+      </div>
+
+    <% end %>
+  </div>
+</div>
+
+  

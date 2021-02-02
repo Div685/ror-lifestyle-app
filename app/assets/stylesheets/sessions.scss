@@ -1,0 +1,24 @@
+.login-main {
+  background-color: #4e443e;
+
+  .box {
+    margin: 8rem auto;
+    background-color: #fff;
+    border-radius: 5px;
+
+    h1 {
+      color: #ec6010;
+    }
+
+    .btn-primary {
+      background-color: #ec6010 !important;
+      border-color: #ec6010 !important;
+      font-weight: 800;
+    }
+
+    a {
+      color: #ec6010;
+      font-weight: 800;
+    }
+  }
+}

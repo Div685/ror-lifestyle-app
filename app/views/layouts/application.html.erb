@@ -1,15 +1,106 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RorLifestyleApp</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!PeTsLiFestyLE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
-    <%= yield %>
+    
+
+    <nav class="p-3 fix-top-nav navbar navbar-expand-lg align-items-center d-flex justify-content-between">
+      
+      <div class="logo">
+        <%= link_to '!PetsLiFestyLE', root_path, class: "logo-text text-decoration-none"%>
+        <i class="dot-icon fas fa-circle"></i>
+      </div>
+
+      <div class="nav-center d-none d-md-block">
+         <%= link_to 'Home', root_path, class: "login" %>
+        <%= nav_article %>
+      </div>
+
+      <div class="nav-right d-none d-md-flex flex-row align-items-center">
+        <%=  nav_signup %>
+      </div>
+
+      <span style="font-size:30px;cursor:pointer" class="d-md-none" onclick="openNav()">&#9776;</span>
+
+    </nav>
+      <!-- nav mobile Screen-->
+      <div class="sidenav d-md-none d-lg-none d-flex flex-column" id="mySidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <%= link_to 'Home', root_path, class: "login" %>
+          <%= nav_article %>
+        <%=  nav_signup %>
+      </div>
+      
+ 
+
+
+    <% if flash[:notice] %>
+      <div id="successMessage" class="p-0 m-0 d-flex align-items-center">
+          <p class="notice"><%= notice %></p> 
+      </div>
+    <% end %>
+    
+    <% if flash[:alert] %>
+      <div id="successMessage" class="p-2 d-flex align-items-center">
+        <p class="alert"><%= alert %></p>
+      </div>
+    <% end %>
+
+    <div class="main-section overflow-hidden" id="main">
+      <%= yield %>
+    </div>
+
+    <div class="footer p-3">
+
+      <div class="logo">
+        <%= link_to '!LiFestyLE', root_path, class: "footer-text"%>
+        <i class="dot-icon fas fa-circle"></i>
+      </div>
+
+      <div class="middle-footer">
+        <span>Privacy Policy Term & Condition &nbsp;</span>
+          Copyright 2014. All rights reserved.
+      </div>
+      
+      <div class="right-footer">
+        <span class="right-text">Connect with us: </span>
+        <div class="footer-icon">
+        <i class="footer-i fab fa-twitter"></i>
+        </div>
+        <div class="footer-icon">
+          <i class="footer-i fab fa-instagram"></i>
+        </div>
+        <div class="footer-icon">
+          <i class="footer-i fab fa-facebook-f"></i>
+        </div>
+      </div>
+    </div>
+    <%=javascript_include_tag "https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"  %>
+    <script>
+        $(document).ready(function() {
+              $('.js-example-basic-multiple').select2();
+          });
+
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginRight = "0";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginRight= "0";
+      }
+    </script>
   </body>
 </html>

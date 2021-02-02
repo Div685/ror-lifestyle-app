@@ -1,0 +1,36 @@
+<% rev = false %> <% erv = false %>
+<section class="main-category-show">
+  <div class="title">
+    <h2><%= @category.name %> </h2>
+  </div>
+  <div class="grid-show-article">
+    <% @category.articles.order(created_at: :desc).each_with_index do |article, i| %>
+    
+    <article>
+      <div class="image-article col-md-6 col-12 p-0 <%= erv ? 'image-md-reversed': '' %> <%=rev ? 'image-reversed' : '' %> ">
+        <figure class="p-0 m-0">
+          <%= image_article(article.img) %>
+        </figure>
+      </div>
+      <div class="content-article col-md-6 col-12 p-0 bg-light <%= erv ? 'information-md-reversed' : '' %> <%=rev ? 'information-reversed' : '' %>">
+        <h4 class="linkk ml-2">
+          <%=link_to article.title.truncate(20), article_path(article) %>
+        </h4>
+        <div class="d-md-flex flex-md-column span-author">
+          <span class="span-autho">Posted By: <%= article.author.name %> </span> <br />
+          <span class="span-autho mt-md-n3"> Posted at: <%= article.created_at %> </span>
+        </div>
+        <p class="mr-3 ml-2" >
+          <%= article.text %>
+        </p>
+        <div class="author-vote">  
+          <!-- <span class="author-name">By: <%= article.author.name %></span>  -->
+          <span class="vote-name"> <%= vote_article(article) %> <%= article.votes.count %> </span>
+        </div>
+      </div>
+    </article>
+    <% rev = !rev if (i+1).even? %>
+    <% erv = !erv if (i %1 == 0) %>
+    <% end %>
+  </div>
+</section>
