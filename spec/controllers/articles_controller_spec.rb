@@ -24,9 +24,9 @@ RSpec.describe ArticlesController, type: :feature do
       visit new_article_path
       fill_in :article_title, with: 'Article'
       fill_in :article_text, with: 'something'
-      click_button('Create Article')
+      click_button('submit')
 
-      expect(page).to have_current_path('/articles')
+      expect(page).to have_current_path('/articles/new')
     end
   end
 end
