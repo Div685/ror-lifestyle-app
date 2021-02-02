@@ -34,16 +34,7 @@
         %>
         <br />
         <strong><%= f.label :image, "Image link" %></strong><br />
-        <%= f.url_field :image, class: "form-control",
-          label: "Image URL: ",
-          required: true,
-          label_html: { class: "label "},
-          wrapper: false,
-           placeholder: "image URL" %>
-            
-            <br />
-
-            <%= f.file_field :img, as: :file, direct_upload: true, input_html: { class: 'form-control' }, wrapper: false%>
+         <%= f.file_field :img, as: :file, direct_upload: true, input_html: { class: 'form-control' }, wrapper: false%>
           
       </div>
 

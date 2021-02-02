@@ -10,8 +10,9 @@ class Article < ApplicationRecord
 
   has_one_attached :img
 
-  validates_presence_of :title, :text, :image
+  validates_presence_of :title, :text
   validates :title, length: { minimum: 3, maximum: 90 }
+  validate :check_file_presence
 
   accepts_nested_attributes_for :categories_per_articles
 
