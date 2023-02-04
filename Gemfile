@@ -25,7 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'cloudinary'
 gem 'dotenv-rails', groups: %i[development test]
 gem 'google-cloud-storage'
-gem 'mimemagic', '~> 0.3.5'
+#gem 'mimemagic', '~> 0.3.5'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
